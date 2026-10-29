@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#faf7ed">
+  <title>Pumpkin! · Your little pumpkin patch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="game">
+  <section class="patch" aria-label="Your pumpkin patch">
+    <header class="patch-header"><h1>Pumpkin!<img class="brand-leaf" src="assets/leaf-watercolor.png" alt=""></h1><button id="sound" class="icon-button" aria-label="Enable sound" aria-pressed="false" title="Toggle sound">♪</button></header>
+    <div class="score"><img src="assets/slice-watercolor.png" alt=""><span id="weight">0</span><span class="unit">lbs</span></div>
+    <div class="growth"><span class="growth-pill"><img class="rate-icon" src="assets/hourglass-watercolor.png" alt=""><b id="rate">0</b> lb / sec</span><span class="growth-pill"><img class="tap-icon" src="assets/tap-watercolor.png" alt=""><span id="tap-value">0.1 lb / tap</span></span></div>
+    <div class="pumpkin-stage" id="stage">
+      <button id="grow" aria-label="Grow pumpkin" class="pumpkin-button"><img class="pumpkin-image" src="assets/pumpkin-watercolor.png" alt="A happy watercolor pumpkin" draggable="false"></button>
+      <span class="tap-hint" aria-hidden="true">Tap to grow!</span>
+    </div>
+    <div class="milestone patch-milestone"><img class="medal" data-category-image src="assets/badge-mini.png" alt=""><div class="milestone-copy"><strong data-category>Mini</strong><span data-next-label>Next: Carving at 10 lbs</span><div class="progress" role="progressbar" aria-label="Next pumpkin milestone" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div data-progress></div></div></div></div>
+  </section>
+  <aside aria-label="Pumpkin helpers and harvest">
+    <div class="sheet-header">
+      <button id="back-to-pumpkin" class="back-to-pumpkin"><span aria-hidden="true">←</span> Back to pumpkin</button>
+      <div class="tabs" role="tablist" aria-label="Explore your patch"><button id="shop-tab" class="active" role="tab" aria-controls="shop" aria-selected="true" data-tab="shop">Add Helpers <span id="helper-count" title="Affordable helper options">0</span></button><button id="stats-tab" role="tab" aria-controls="stats" aria-selected="false" data-tab="stats">Your Harvest <span id="badge-count" title="Badges earned">0</span></button></div>
+    </div>
+    <div class="sheet-content">
+      <div id="shop" role="tabpanel" aria-labelledby="shop-tab">
+        <div class="tip"><img src="assets/slice-watercolor.png" alt=""><p><b>1 slice = 1 lb</b><br>Helpers cost pumpkin weight.</p></div>
+        <div class="wallet">YOUR SLICES <strong><img src="assets/slice-watercolor.png" alt=""><span id="slices">0</span></strong></div>
+        <div id="upgrades"></div>
+      </div>
+      <div id="stats" role="tabpanel" aria-labelledby="stats-tab" hidden>
+        <h2>A patch to be proud of.</h2>
+        <dl><dt>Total taps</dt><dd id="total-taps">0</dd><dt>Total slices grown</dt><dd id="total-slices">0</dd><dt>Helpers hired</dt><dd id="helpers">0</dd></dl>
+        <div class="milestone"><img class="medal" data-category-image src="assets/badge-mini.png" alt=""><div class="milestone-copy"><small>YOUR PUMPKIN IS A</small><strong id="category" data-category>Mini</strong><span id="next-label" data-next-label>Next: Carving at 10 lbs</span><div class="progress" role="progressbar" aria-label="Next pumpkin milestone" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress" data-progress></div></div></div></div>
+        <ul class="badges" id="badges" aria-label="Harvest badges"></ul>
+        <div class="harvest-actions"><button id="reset" class="reset">Start a fresh patch</button><a href="/test-results.html" class="test-results-link">View Jest test results</a></div>
+      </div>
+    </div>
+  </aside>
+</main>
+<script type="module" src="game.js"></script>
+</body>
+</html>
